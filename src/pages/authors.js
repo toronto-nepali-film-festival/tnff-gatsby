@@ -4,7 +4,7 @@ import { graphql } from "gatsby";
 export default function Authors({ data }) {
     return(
         <div>
-            <pre>{ JSON.stringify(data.hasura, null, ) }</pre>
+            <pre>{ JSON.stringify(data.hasura, null, 2) }</pre>
         </div>
     )
 }
