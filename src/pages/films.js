@@ -2,6 +2,11 @@ import React from "react";
 import { graphql } from "gatsby";
 
 export default function Films({ data }) {
+   
+    const films = data.hasura.tnff_films
+
+    // filter film by year
+    // gallery with film image and title
     return (
         <div>
             <pre>{ JSON.stringify(data.hasura, null, 2) }</pre>
@@ -32,3 +37,4 @@ export const query = graphql`
         }
     }
 `
+
