@@ -37,7 +37,7 @@ jobs:
         with:
           node-version: '14.16'
       - name: Run E2E tests
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2.3.1
         with:
           start: "npm run start"
           wait-on: "http://localhost:8000/"
