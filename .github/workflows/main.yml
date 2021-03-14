@@ -36,10 +36,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.16'
+      - name: Run development mode
+        run: npm run start
       - name: Run E2E tests
         uses: cypress-io/github-action@v2.3.1
         with:
-          start: "npm run start"
           wait-on: "http://localhost:8000/"
           record: true
         env:
