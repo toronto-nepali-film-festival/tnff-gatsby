@@ -39,8 +39,8 @@ jobs:
       - name: Run E2E tests
         uses: cypress-io/github-action@v2.3.1
         with:
-          start: "npm run start"
-          wait-on: "http://localhost:8000/"
+          start: npm start
+          wait-on: "http://localhost:8000"
           record: true
         env:
           HASURA_GRAPHQL_URL: ${{ secrets.HASURA_GRAPHQL_URL }}
