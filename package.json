@@ -11,7 +11,10 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "lint": "npx eslint . --ext .js,.jsx",
+    "lint-report": "npx eslint . --ext .js,jsx -o .reports/eslint-report.html -f html",
+    "lint-fix": "npx eslint . --fix --ext .js,.jsx"
   },
   "dependencies": {
     "gatsby": "^2.26.1",
@@ -28,6 +31,7 @@
     "typography-theme-fairy-gates": "^0.16.19"
   },
   "devDependencies": {
+    "eslint-config-react-app": "^6.0.0",
     "prettier": "2.2.1"
   },
   "repository": {
