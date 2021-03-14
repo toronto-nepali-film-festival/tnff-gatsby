@@ -43,4 +43,5 @@ jobs:
           wait-on: "http://localhost:8000/"
           record: true
         env:
+          HASURA_GRAPHQL_URL: ${{ secrets.HASURA_GRAPHQL_URL }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
