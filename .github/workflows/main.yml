@@ -39,11 +39,12 @@ jobs:
       - run : npm install
       - name: Run development mode
         run: npm run start
+        env:
+          HASURA_GRAPHQL_URL: ${{ secrets.HASURA_GRAPHQL_URL }}
       - name: Run E2E tests
         uses: cypress-io/github-action@v2.3.1
         with:
           wait-on: "http://localhost:8000/"
           record: true
         env:
-          HASURA_GRAPHQL_URL: ${{ secrets.HASURA_GRAPHQL_URL }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
