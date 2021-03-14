@@ -13,3 +13,17 @@ jobs:
       - run: npm install
       - name: Lint javscript code
         run: npm run lint
+      - name: Save eslint report json
+        run : npm run lint-report-json
+        #continue to next step even if it fails
+        continue-on-error: true
+      - name: Annotate Code Linting Results
+        uses: ataylorme/eslint-annotate-action@1.1.2
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          report-json: ".reports/eslint-report.json"
+      - name: Uload ESLint report
+        uses: actions/upload-artifact@v1
+        with:
+          name: eslint-report.json
+          path: .reports/eslint-report.json
