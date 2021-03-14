@@ -9,7 +9,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v1
         with:
-          node-version: '12.8'
+          node-version: '14.16'
       - run: npm install
       - name: Lint javscript code
         run: npm run lint
