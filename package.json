@@ -15,7 +15,9 @@
     "lint": "npx eslint . --ext .js,.jsx",
     "lint-report-json": "npx eslint . --ext .js,.jsx -o .reports/eslint-report.json -f json src",
     "lint-report-html": "npx eslint . --ext .js,jsx -o .reports/eslint-report.html -f html",
-    "lint-fix": "npx eslint . --fix --ext .js,.jsx"
+    "lint-fix": "npx eslint . --fix --ext .js,.jsx",
+    "cy:open": "npx cypress open",
+    "cy:run": "npx cypress run"
   },
   "dependencies": {
     "babel-eslint": "^10.1.0",
