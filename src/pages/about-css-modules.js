@@ -1,6 +1,5 @@
 import React from "react";
-import styles from "./about-css-modules.module.css";
-// import styles from '../partials/about.scss'
+import * as styles from "./about-css-modules.module.css";
 import Container from "../components/container";
 
 const User = props => (
