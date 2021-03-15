@@ -1,14 +1,12 @@
 import React from "react";
-import styles from "./about-css-modules.module.css";
-// import styles from '../partials/about.scss'
 import Container from "../components/container";
 
 const User = props => (
-    <div className={styles.user}>
-        <img src={props.avatar} className={styles.avatar} alt="" />
-        <div className={styles.description}>
-            <h2 className={styles.username}>{props.username}</h2>
-            <p className={styles.excerpt}>{props.excerpt}</p>
+    <div className="user">
+        <img src={props.avatar} className="avatar" alt="" />
+        <div className="description">
+            <h2 className="username">{props.username}</h2>
+            <p className="exerpt">{props.excerpt}</p>
         </div>
     </div>
 )
