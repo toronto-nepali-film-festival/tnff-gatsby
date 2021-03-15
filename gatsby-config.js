@@ -23,12 +23,12 @@ module.exports = {
         icon: 'src/assets/tnff_red.png'
       }
     },
-    {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'src/utils/typography',
-      }
-    },
+    // {
+    //   resolve: 'gatsby-plugin-typography',
+    //   options: {
+    //     pathToConfigModule: 'src/utils/typography',
+    //   }
+    // },
     {
       resolve: 'gatsby-source-graphql',
       options: {
