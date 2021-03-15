@@ -24,12 +24,6 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'src/utils/typography',
-      }
-    },
-    {
       resolve: 'gatsby-source-graphql',
       options: {
         typeName: 'HASURA',
