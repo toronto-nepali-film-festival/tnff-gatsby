@@ -12,7 +12,7 @@ export default function Films({ data }) {
         if (film_img_url) {
             return (
                 <div className="film_single" key={id}>
-                    <img src={` https://${film_img_url}`} alt="" />
+                    <img src={`${film_img_url}`} alt="" />
                     <h2>{title}</h2>
                 </div>
             );

@@ -10,7 +10,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
-    `gatsby-plugin-sass`,
+    'gatsby-plugin-sass',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
