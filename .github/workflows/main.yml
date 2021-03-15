@@ -9,7 +9,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v1
         with:
-          node-version: '12.8'
+          node-version: '14.16'
       - run: npm install
       - name: Lint javscript code
         run: npm run lint
@@ -27,3 +27,21 @@ jobs:
         with:
           name: eslint-report.json
           path: .reports/eslint-report.json
+  cypress-run:
+    runs-on: ubuntu-16.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.16'
+      - name: Run E2E tests
+        uses: cypress-io/github-action@v2
+        with:
+          record: true
+          start: npm start
+          wait-on: 'http://localhost:8000'
+        env:
+          HASURA_GRAPHQL_URL: ${{ secrets.HASURA_GRAPHQL_URL }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
