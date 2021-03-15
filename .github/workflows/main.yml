@@ -41,6 +41,7 @@ jobs:
         with:
           record: true
           start: npm start
+          wait-on: 'http://localhost:8000'
         env:
           HASURA_GRAPHQL_URL: ${{ secrets.HASURA_GRAPHQL_URL }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
