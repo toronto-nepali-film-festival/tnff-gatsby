@@ -66,14 +66,14 @@ export default function Films({ }) {
 
 // gallery with film image and title
 const filmData = data.map(film => {
-const { film_img_url, title, id, release_date } = film;
+const { film_img_url, title, id, tnff_year } = film;
 if (film_img_url) {
   return (
       <div className="film_single" key={id}>
           <img src={`${film_img_url}`} alt="" />
           <div className="movie_data">
               <h2>{title}</h2>
-              <p>{ release_date}</p>
+              <p>{ tnff_year}</p>
           </div>
       </div>
   );
