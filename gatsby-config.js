@@ -11,6 +11,8 @@ module.exports = {
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
+    'gatsby-transformer-sharp',
+    'gatsby-transformer-json',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -31,5 +33,11 @@ module.exports = {
         url: process.env.HASURA_GRAPHQL_URL,
       }
     },
+    // {
+    //   resolve: 'gatsby-plugin-page-creator',
+    //   options: {
+    //     path: `${__dirname}/src/films`
+    //   }
+    // },
   ],
 }
