@@ -54,7 +54,7 @@ if (film_img_url) {
     <Link to={`/films/${newLink}` } className="film_single" key={id}>
           <img src={`${film_img_url}`} alt="" />
           <div className="movie_data">
-              <h3>{newTitle[0]}</h3>
+              <h4>{newTitle[0]}</h4>
               <p>{ tnff_year}</p>
           </div>
       </Link>
@@ -75,7 +75,7 @@ return (
     {/* filter film by year */}
     <div  className="filter_year">
       <p>Filter By Year:</p>
-            <ul>
+      <ul>
       {years.map((el, index) => {
         return (
           <li key={index} value={searchYear} onClick={e=>filter(e)}>{ el}</li>

@@ -37,8 +37,11 @@ const FilmPage = (props) => {
 
 	return (
 		<Layout>
-
 			<h1>{title}</h1>
+			<div className="film_img">
+				<img src={film_img_url} alt={title}  />
+			</div>
+			
 			<hr />
 			<div className="film_meta">
 				<p><BiWorld/>{location}</p>
@@ -47,8 +50,6 @@ const FilmPage = (props) => {
 				<p><FaLanguage/> {language}</p>
 				<p><RiMovieLine />{ category}</p>
 			</div>
-
-			<img src={film_img_url } alt={title } className="film_img"/>
 
 			<div className="film_section">
 				<h3>Synopsis</h3>
