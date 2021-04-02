@@ -2,37 +2,39 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
 	
 	const result = await graphql(
 		`
-			query  {
-				hasura {
-					tnff_films {
-						id
-						title
-						synopsis
-					}
-				}
-		}
-		`
+		query getFilm ($film_title: String){
+			hasura{
+tnff_films(where: {
+    title: {
+      _eq: $film_title
+    }
+  }) {
+    title
+		synopsis
+  }
+}
+}`
 	)
 
 
 	const filmTemplate = require.resolve('./src/templates/FilmPage.js')
+
 	result.data.hasura.tnff_films.forEach(film => {
-		const newLink = film.title.replace(/ /g,"_");
+		const newLink = film.title.split(' ').join('-').toLowerCase()
 
-
-
-		// console.log(film.title)
 		createPage({
 			path: `/films/${newLink}`,
 			component: filmTemplate,
 			context: {
-				title: film.title
+				content: film
 			} 
 		})
+
+        return Promise.resolve()
 	})
 	if (result.errors) {
 		console.log('error retrieving data', result.errors)
-		return
+			return Promise.reject(new Error(result.errors))
 	}
 
 }
