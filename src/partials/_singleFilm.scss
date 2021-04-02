@@ -1,0 +1,39 @@
+.film_meta {
+  display: flex;
+  justify-content: space-around;
+  margin: 0.5rem 0;
+
+  p {
+    display: flex;
+    align-items: center;
+  }
+  svg {
+    margin: 0.25rem;
+  }
+}
+
+.film_section {
+  margin: 3rem 0;
+}
+
+.film_img {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.director {
+  display: flex;
+  justify-content: space-between;
+}
+
+.director_data {
+  padding: 0 5rem;
+
+  h4 {
+    display: flex;
+    align-items: center;
+  }
+  svg {
+    margin: 0.25rem;
+  }
+}

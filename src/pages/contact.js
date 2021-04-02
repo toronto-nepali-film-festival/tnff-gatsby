@@ -4,9 +4,11 @@ import Layout from "../components/layout";
 
 export default function Contact() {
     return (
-        <Layout>
-            <Header headerText="Contact" />
-            <a href="mailto:tnffcanada@gmail.com">Email us</a>
+        <div className="wrapper">
+            <Layout>
+                <Header headerText="Contact" />
+                <a href="mailto:tnffcanada@gmail.com">Email us</a>
         </Layout>
+        </div>
     )
 }

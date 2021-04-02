@@ -1,46 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quattrocento+Sans:wght@400;700&display=swap");
 
 html {
-    background-color: whitesmoke;
+  background-color: #00001a;
 }
 
 body {
-font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
+  color: white;
+  font-size: $base-font-size;
+  line-height: $vertical-rhythm;
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Quattrocento Sans', sans-serif;
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Quattrocento Sans", sans-serif;
 }
 
+h1 {
+  font-size: $base-font-size * 5;
+  line-height: $base-line-height * ($base-font-size * 5);
+}
+
+h2 {
+  font-size: $base-font-size * 4;
+  line-height: $base-line-height * ($base-font-size * 2.25);
+}
+
+h3 {
+  font-size: $base-font-size * 3;
+  line-height: $base-line-height * ($base-font-size * 3);
+}
+
+h4 {
+  font-size: $base-font-size * 2;
+  line-height: $base-line-height * ($base-font-size * 2);
+}
 a {
-    text-decoration: none;
+  text-decoration: none;
+  color: white;
 }
 
 header {
-    margin-bottom: 1.5rem;
-    display: flex;
-    justify-content: space-between;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 footer {
-    margin-bottom: 1.5rem;
-    color: grey;
+  margin-bottom: 1.5rem;
+  color: grey;
 }
 
 li {
-    display: inline-block;
-    margin-right: 1rem;
+  display: inline-block;
+  margin-right: 1rem;
 }
 
 .wrapper {
-    max-width: 1500px;
-    width: 85%;
-    margin: 0 auto;
+  max-width: 1500px;
+  width: 75%;
+  margin: 0 auto;
 }
 
 .layout {
-    margin: 3rem auto;
-    padding: 0 1rem;
-
+  margin: 3rem auto;
+  padding: 0 1rem;
 }
