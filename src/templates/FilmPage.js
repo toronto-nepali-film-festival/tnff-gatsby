@@ -7,7 +7,20 @@ import {RiMovieLine} from 'react-icons/ri'
 
 
 const FilmPage = (props) => {
-  const {	title,	synopsis,director_bio,	director,	duration_mins, language,release_date,	location,  director_img_url, 	other_info,	film_img_url,	tnff_year,	category} = props.pageContext.content
+	const { title, synopsis, director_bio, director, duration_mins, language, location, director_img_url, other_info, film_img_url, tnff_year, category } = props.pageContext.content;
+
+	const other = () => {
+		if (other_info) {
+			return (
+				<div className="film_section">
+					<h4>Other Info:</h4>
+					<p>{ other_info}</p>
+				</div>
+			)
+		} else {
+			return null
+		}
+	}
 
 	return (
 		<div className="wrapper">
@@ -30,13 +43,18 @@ const FilmPage = (props) => {
 			</div>
 
 			<div className="film_section director">
-				<div className="director_img"><img src={ director_img_url} alt={director } /></div>
+				<div className="director_img">
+					<img src={director_img_url} alt={director} />
+				</div>
+				
 				<div className="director_data">
 					<h3>Director</h3>
 					<h4><BsPersonFill />{ director}</h4>
 					<p>{director_bio }</p>
 				</div>
 			</div>
+
+			{other}
 
 		</div>
 	)

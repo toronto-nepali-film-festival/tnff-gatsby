@@ -11,7 +11,6 @@ const Filter = ({ filter }) => {
     <div className="films_filter">
       <label htmlFor="filter">Filter By Year</label>
 			<select name="filter" id="filter"
-				// onChange={filter}
 			>
 				{years.map((el, index) => {
 					return (

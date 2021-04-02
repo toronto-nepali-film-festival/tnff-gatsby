@@ -34,11 +34,5 @@ module.exports = {
         url: process.env.HASURA_GRAPHQL_URL,
       }
     },
-    // {
-    //   resolve: 'gatsby-plugin-page-creator',
-    //   options: {
-    //     path: `${__dirname}/src/films`
-    //   }
-    // },
   ],
 }

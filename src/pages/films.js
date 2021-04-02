@@ -1,16 +1,14 @@
-import React, { Fragment, useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import Layout from '../components/layout'
 
 
-export default function Films({ }) {
+export default function Films() {
 
   const [data, setData] = useState([]);
   const [filmFilter, setFilmFilter] = useState("all");
   const [films, setFilms] = useState([]);
   const [searchYear, setSearchYear] = useState('')
 
-
-  // ! breakdown tasks/lil sprints for timeline
 
   const getData = useCallback(async function () {
     try {
@@ -42,27 +40,6 @@ export default function Films({ }) {
     setFilmFilter(e.target.textContent)
   };
 
-
-  // let filmsToRender = [];
-  // data.forEach((film) => {
-  //   if (filmFilter === "all") {
-  //     filmsToRender.push(film);
-  //     // console.log(film)
-  //     //   filmsToRender.push(film);
-  //   } else {
-  //     // console.log(data)
-  //     data.forEach(film => {
-  //       console.log(film)
-        // if (film.tnff_year === filmFilter) {
-      //     console.log(filmFilter)
-      //   console.log(film);
-      //   // filmsToRender.push(film)
-      //   }
-//       });
-//     }
-//   })
-// console.log(filmsToRender)
-// console.log(data)
 
 // gallery with film image and title
 const filmData = data.map(film => {
