@@ -38,8 +38,6 @@ const FilmPage = (props) => {
 	return (
 		<Layout>
 
-		<div className="wrapper">
-
 			<h1>{title}</h1>
 			<hr />
 			<div className="film_meta">
@@ -68,8 +66,6 @@ const FilmPage = (props) => {
 			</div>
 
 			{other}
-
-		</div>
 		</Layout>
 	)
 };
