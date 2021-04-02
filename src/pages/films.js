@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from "react";
-import {NavLink, BrowserRouter as Router} from 'react-router-dom'
+import {Link} from 'gatsby'
 import Layout from '../components/layout'
 
 
@@ -49,13 +49,13 @@ const filmData = data.map(film => {
 
 if (film_img_url) {
   return (
-    <NavLink to={`/films/${newLink}` } className="film_single" key={id}>
+    <Link to={`/films/${newLink}` } className="film_single" key={id}>
           <img src={`${film_img_url}`} alt="" />
           <div className="movie_data">
               <h3>{title}</h3>
               <p>{ tnff_year}</p>
           </div>
-      </NavLink>
+      </Link>
   );
 } else {
   return null
@@ -84,10 +84,9 @@ return (
         </ul>
     </div>
   <div className="films_container">
-        <Router>
+
           
   {filmData}
-  </Router>
   </div>
   </Layout>
 </div>
