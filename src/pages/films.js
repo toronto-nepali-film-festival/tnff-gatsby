@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from "react";
+import {NavLink, BrowserRouter as Router} from 'react-router-dom'
 import Layout from '../components/layout'
 
 
@@ -43,16 +44,18 @@ export default function Films() {
 
 // gallery with film image and title
 const filmData = data.map(film => {
-const { film_img_url, title, id, tnff_year } = film;
+  const { film_img_url, title, id, tnff_year } = film;
+  const newLink = title.split(' ').join('-').toLowerCase()
+
 if (film_img_url) {
   return (
-      <div className="film_single" key={id}>
+    <NavLink to={`/films/${newLink}` } className="film_single" key={id}>
           <img src={`${film_img_url}`} alt="" />
           <div className="movie_data">
-              <h2>{title}</h2>
+              <h3>{title}</h3>
               <p>{ tnff_year}</p>
           </div>
-      </div>
+      </NavLink>
   );
 } else {
   return null
@@ -81,8 +84,10 @@ return (
         </ul>
     </div>
   <div className="films_container">
-  
+        <Router>
+          
   {filmData}
+  </Router>
   </div>
   </Layout>
 </div>
