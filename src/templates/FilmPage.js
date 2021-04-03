@@ -1,4 +1,5 @@
 import React from 'react'
+import Layout from '../components/layout'
 import {BiWorld} from 'react-icons/bi'
 import {BsCalendar, BsPersonFill }from 'react-icons/bs'
 import {AiOutlineClockCircle} from 'react-icons/ai'
@@ -22,10 +23,25 @@ const FilmPage = (props) => {
 		}
 	}
 
-	return (
-		<div className="wrapper">
+	const director_photo = () => {
+		if (director_img_url) {
+			return (
+				<div className="director_img">
+					<img src={director_img_url} alt={director} />
+				</div>
+			)
+		} else {
+			return null
+		}
+	}
 
+	return (
+		<Layout>
 			<h1>{title}</h1>
+			<div className="film_img">
+				<img src={film_img_url} alt={title}  />
+			</div>
+			
 			<hr />
 			<div className="film_meta">
 				<p><BiWorld/>{location}</p>
@@ -35,19 +51,15 @@ const FilmPage = (props) => {
 				<p><RiMovieLine />{ category}</p>
 			</div>
 
-			<img src={film_img_url } alt={title } className="film_img"/>
-
 			<div className="film_section">
 				<h3>Synopsis</h3>
 				<p>{synopsis }</p>
 			</div>
 
-			<div className="film_section director">
-				<div className="director_img">
-					<img src={director_img_url} alt={director} />
-				</div>
+				<div className="film_section director">
+					{director_photo()}
 				
-				<div className="director_data">
+				<div className={!director_img_url ? null : `director_data`} >
 					<h3>Director</h3>
 					<h4><BsPersonFill />{ director}</h4>
 					<p>{director_bio }</p>
@@ -55,8 +67,7 @@ const FilmPage = (props) => {
 			</div>
 
 			{other}
-
-		</div>
+		</Layout>
 	)
 };
 

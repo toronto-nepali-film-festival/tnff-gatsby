@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from "react";
+import {Link} from 'gatsby'
 import Layout from '../components/layout'
 
 
@@ -43,16 +44,20 @@ export default function Films() {
 
 // gallery with film image and title
 const filmData = data.map(film => {
-const { film_img_url, title, id, tnff_year } = film;
+  const { film_img_url, title, id, tnff_year } = film;
+  const newLink = title.split(' ').join('-').toLowerCase()
+  const newTitle = title.split('(')
+  console.log(newTitle)
+
 if (film_img_url) {
   return (
-      <div className="film_single" key={id}>
+    <Link to={`/films/${newLink}` } className="film_single" key={id}>
           <img src={`${film_img_url}`} alt="" />
           <div className="movie_data">
-              <h2>{title}</h2>
+              <h4>{newTitle[0]}</h4>
               <p>{ tnff_year}</p>
           </div>
-      </div>
+      </Link>
   );
 } else {
   return null
@@ -66,13 +71,11 @@ return el.tnff_year
 const years = [...new Set(yearsList)]
 
 return (
-<div className="wrapper">
 <Layout>
-  
     {/* filter film by year */}
     <div  className="filter_year">
       <p>Filter By Year:</p>
-            <ul>
+      <ul>
       {years.map((el, index) => {
         return (
           <li key={index} value={searchYear} onClick={e=>filter(e)}>{ el}</li>
@@ -81,10 +84,8 @@ return (
         </ul>
     </div>
   <div className="films_container">
-  
   {filmData}
-  </div>
+      </div>
   </Layout>
-</div>
 )
 }

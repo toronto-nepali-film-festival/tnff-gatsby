@@ -10,7 +10,7 @@ const ListLink = props => (
 
 export default function Layout({ children }) {
   return (
-    <div className="layout">
+    <div className="layout wrapper">
       <header>
         <Link to="/">
             <h3>Toronto Nepali Film Festival</h3>
@@ -19,7 +19,7 @@ export default function Layout({ children }) {
             <ListLink  to="/">Home</ListLink>
             <ListLink to="/about">About</ListLink>
             <ListLink to="/contact/">Contact</ListLink>
-            <ListLink to="/films">Archive</ListLink>
+          <ListLink to="/films">Archive</ListLink>
         </ul>
       </header>
       {children}
