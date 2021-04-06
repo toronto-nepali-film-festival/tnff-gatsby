@@ -6,8 +6,7 @@ import Layout from '../components/layout'
 export default function Films() {
 
   const [data, setData] = useState([]);
-  const [filmFilter, setFilmFilter] = useState("all");
-  const [films, setFilms] = useState([]);
+  const [filmFilter, setFilmFilter] = useState("All");
   const [searchYear, setSearchYear] = useState('')
 
 
@@ -37,13 +36,25 @@ export default function Films() {
 
   // Set filter in state for given input
   const filter = (e) => {
-    console.log(e.target.textContent)
     setFilmFilter(e.target.textContent)
   };
 
 
+
+  let filmsRender = [];
+  data.forEach(film => {
+    if (filmFilter === "All") {
+      filmsRender.push(film)
+    } else {
+      if (film.tnff_year === filmFilter && film.film_img_url) {
+        filmsRender.push(film)
+      }
+    }
+  })
+
+
 // gallery with film image and title
-const filmData = data.map(film => {
+const filmData = filmsRender.map(film => {
   const { film_img_url, title, id, tnff_year } = film;
   const newLink = title.split(' ').join('-').toLowerCase()
   const newTitle = title.split('(')
@@ -58,13 +69,15 @@ if (film_img_url) {
           </div>
       </Link>
   );
-} else {
-  return null
-}
+    } else {
+      return null
+    }
 })
   
+const emptyArray = filmsRender.length === 0 ? 'Sorry, no films for this year.' : null;
+  
 const yearsList = data.map((el) => {
-return el.tnff_year
+  return el.tnff_year
 })
 
 const years = [...new Set(yearsList)]
@@ -75,6 +88,7 @@ return (
     <div  className="filter_year">
       <p>Filter By Year:</p>
       <ul>
+        <li value={searchYear} onClick={e=>filter(e)}>All</li>
       {years.map((el, index) => {
         return (
           <li key={index} value={searchYear} onClick={e=>filter(e)}>{ el}</li>
@@ -83,7 +97,8 @@ return (
         </ul>
     </div>
   <div className="films_container">
-  {filmData}
+      {filmData}
+      <h4>{emptyArray}</h4>
       </div>
   </Layout>
 )
