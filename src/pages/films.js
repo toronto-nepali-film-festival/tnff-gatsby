@@ -47,7 +47,6 @@ const filmData = data.map(film => {
   const { film_img_url, title, id, tnff_year } = film;
   const newLink = title.split(' ').join('-').toLowerCase()
   const newTitle = title.split('(')
-  console.log(newTitle)
 
 if (film_img_url) {
   return (
