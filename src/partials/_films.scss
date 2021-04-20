@@ -48,15 +48,17 @@
 .filter_year {
   @include flexCenter();
   flex-direction: column;
+  ul {
+    margin: 0.5rem 0;
+  }
   li {
-    margin: 1rem;
     cursor: pointer;
     .active {
+      padding: 0.5rem;
+      border-radius: 20px;
       &:active,
       &:focus-within {
         background-color: darkred;
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
       }
     }
   }

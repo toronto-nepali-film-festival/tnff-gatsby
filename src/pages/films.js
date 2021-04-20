@@ -6,7 +6,6 @@ import { Loader } from "../components/helpers/Loader";
 export default function Films() {
   const [data, setData] = useState([]);
   const [filmFilter, setFilmFilter] = useState("All");
-  console.log(data);
 
   const getData = useCallback(async function () {
     try {
