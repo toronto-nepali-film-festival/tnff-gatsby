@@ -7,7 +7,7 @@
 .film_single {
   color: #00001a;
   width: 250px;
-  margin: 1rem auto;
+  margin: 1rem;
   position: relative;
 
   img {
@@ -51,5 +51,13 @@
   li {
     margin: 1rem;
     cursor: pointer;
+    .active {
+      &:active,
+      &:focus-within {
+        background-color: darkred;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+      }
+    }
   }
 }
