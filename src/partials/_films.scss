@@ -7,7 +7,7 @@
 .film_single {
   color: #00001a;
   width: 250px;
-  margin: 1rem;
+  margin: 1rem auto;
   position: relative;
 
   img {
@@ -62,4 +62,14 @@
       }
     }
   }
+}
+
+@media (min-width: 992px) {
+  .movie_data {
+    background-color: rgb(255, 255, 255, 0);
+    opacity: 0;
+  }
+}
+
+@media (min-width: 768px) {
 }

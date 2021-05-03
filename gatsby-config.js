@@ -14,7 +14,6 @@ module.exports = {
     "gatsby-plugin-sass",
     "gatsby-transformer-sharp",
     "gatsby-transformer-json",
-    "gatsby-plugin-mdx",
     {
       resolve: "gatsby-plugin-manifest",
       options: {

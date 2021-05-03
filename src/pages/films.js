@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect } from "react";
 import { Link } from "gatsby";
 import Layout from "../components/layout";
 import { Loader } from "../components/helpers/Loader";
+import { BrowserView, MobileView } from "react-device-detect";
 
 export default function Films() {
   const [data, setData] = useState([]);
@@ -56,7 +57,11 @@ export default function Films() {
     if (film_img_url) {
       return (
         <Link to={`/films/${newLink}`} className="film_single" key={id}>
-          <img src={`${film_img_url}`} alt="" />
+          <img
+            src={`${film_img_url}`}
+            alt={`${title} movie poster`}
+            loading="lazy"
+          />
           <div className="movie_data">
             <h4>{newTitle[0]}</h4>
             <p>{tnff_year}</p>
@@ -84,22 +89,42 @@ export default function Films() {
       <Layout>
         <div className="filter_year">
           <p>Filter By Year:</p>
-          <ul>
-            <li onClick={e => handleClick(e)}>All</li>
-            {years.map((el, index) => {
-              return (
-                <li key={index}>
-                  <Link
-                    to="/films"
-                    activeClassName="active"
-                    onClick={e => handleClick(e)}
-                  >
-                    {el}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+          <MobileView>
+            <div className="select">
+              <select name="tnff_films" id="year">
+                {years.map((el, index) => {
+                  return (
+                    <option
+                      value={el}
+                      key={index}
+                      onClick={e => handleClick(e)}
+                    >
+                      {el}
+                    </option>
+                  );
+                })}
+                ;
+              </select>
+            </div>
+          </MobileView>
+          <BrowserView>
+            <ul>
+              <li onClick={e => handleClick(e)}>All</li>
+              {years.map((el, index) => {
+                return (
+                  <li key={index}>
+                    <Link
+                      to="/films"
+                      activeClassName="active"
+                      onClick={e => handleClick(e)}
+                    >
+                      {el}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </BrowserView>
         </div>
         <div className="films_container">
           {filmData}
