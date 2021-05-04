@@ -13,7 +13,7 @@ body {
 }
 
 main {
-  margin-top: 3rem;
+  margin-top: 5rem;
 }
 
 header {
@@ -23,6 +23,13 @@ header {
 
   h3 {
     color: $tnff-red;
+  }
+
+  a {
+    font-size: $base-font-size * 1.25;
+    &:hover {
+      color: $tnff-red;
+    }
   }
 }
 
