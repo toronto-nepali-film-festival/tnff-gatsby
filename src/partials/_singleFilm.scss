@@ -31,6 +31,7 @@
 }
 
 .director_data {
+  width: 100%;
   margin: 0 auto;
   h4 {
     display: flex;
@@ -42,33 +43,34 @@
 }
 
 .director_img {
-  width: 200px;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .director {
+    display: flex;
+    flex-direction: row;
+
+    & > * {
+      width: calc((100% / 2));
+    }
+  }
 }
 
 @media (min-width: 768px) {
   .film_meta {
     flex-direction: row;
-    justify-content: space-around;
+
+    p {
+      margin-right: 4rem;
+    }
   }
 
   .film_img {
     width: 400px;
   }
 
-  .director_img {
-    width: 300px;
-  }
-
-  .director {
-    display: flex;
-    flex-direction: row;
-
-    & > * {
-      width: calc((100% / 2) - 2rem);
-    }
-
-    .director_data {
-      margin: 0 2rem;
-    }
+  .director_data {
+    margin-right: 2rem;
   }
 }

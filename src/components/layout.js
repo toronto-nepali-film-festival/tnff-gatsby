@@ -1,9 +1,14 @@
 import React, { useState } from "react";
-import Logo from "../assets/tnff_red.png";
+import TnffFullLogo from "../assets/tnff-full-logo.svg";
 import { Link } from "gatsby";
 import { BrowserView, MobileView } from "react-device-detect";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
+import {
+  AiOutlineInstagram,
+  AiOutlineTwitter,
+  AiOutlineFacebook,
+} from "react-icons/ai";
 
 const ListLink = props => (
   <li>
@@ -35,13 +40,13 @@ export default function Layout({ children }) {
           <div className="logo_container">
             <Link to="/">
               <img
-                src={Logo}
+                src={TnffFullLogo}
                 alt="Toronto Nepali Film Festival Logo"
                 className="logo"
               />
-              <BrowserView>
+              {/* <BrowserView>
                 <h3>Toronto Nepali Film Festival</h3>
-              </BrowserView>
+              </BrowserView> */}
             </Link>
           </div>
 
@@ -78,6 +83,17 @@ export default function Layout({ children }) {
       <main>{children}</main>
       <footer>
         <p>© TNFF | Toronto Nepali Film Festival</p>
+        <div className="socials">
+          <a href="/">
+            <AiOutlineInstagram />
+          </a>
+          <a href="/">
+            <AiOutlineTwitter />
+          </a>
+          <a href="/">
+            <AiOutlineFacebook />
+          </a>
+        </div>
       </footer>
     </div>
   );

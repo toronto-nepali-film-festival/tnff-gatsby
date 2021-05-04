@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  margin-top: 5rem;
+  margin-top: 0;
 
   svg {
     color: $tnff-red;
@@ -19,16 +19,13 @@
 }
 
 .logo_container {
-  @include flexCenter();
-  flex-direction: row;
-
-  img {
-    width: 200px;
-  }
+  width: 100%;
 
   a {
     color: $tnff-red;
-    @include flexCenter();
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
   }
 }
 .popout_menu {
@@ -109,8 +106,16 @@
 }
 
 /* Mobile */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .popout_menu {
     padding: 2rem 1rem;
+  }
+
+  .logo_container {
+    width: 30%;
+  }
+
+  .header {
+    margin-top: 5rem;
   }
 }

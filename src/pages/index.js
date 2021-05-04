@@ -1,14 +1,9 @@
 import React from "react";
 import Layout from "../components/layout";
-import TnffFullLogo from "../assets/tnff_logo_full.png";
-import { BrowserView } from "react-device-detect";
 
 export default function Home() {
   return (
     <Layout>
-      <BrowserView>
-        <img src={TnffFullLogo} alt="TNFF Logo" className="tnff_full_logo" />
-      </BrowserView>
       <p>
         It’s important to use cocoa butter. It’s the key to more success, why
         not live smooth? Why live rough? We the best. I’m giving you cloth talk,

@@ -85,14 +85,13 @@ const FilmPage = ({
 
       <div className="film_section director">
         <div className={!director_img_url ? null : `director_data`}>
-          {director_photo()}
           <h3>Director</h3>
           <h4>
-            <BsPersonFill />
-            {director}
+            <em>{director}</em>
           </h4>
+          <p>{director_bio}</p>
         </div>
-        <p>{director_bio}</p>
+        {director_photo()}
       </div>
 
       {other}
