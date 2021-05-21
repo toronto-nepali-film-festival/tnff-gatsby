@@ -12,20 +12,22 @@ module.exports = {
     "gatsby-plugin-offline",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-transformer-json",
-    {
-      resolve: "gatsby-plugin-manifest",
-      options: {
-        name: "Toronto Nepali Film Festival",
-        short_name: "TNFF",
-        start_url: "/",
-        background_color: "#003049",
-        theme_color: "#003049",
-        displays: "standalone",
-        icon: "src/assets/tnff_red.png",
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-manifest",
+    //   options: {
+    //     name: "Toronto Nepali Film Festival",
+    //     short_name: "TNFF",
+    //     start_url: "/",
+    //     background_color: "#003049",
+    //     theme_color: "#003049",
+    //     displays: "standalone",
+    //     icon: "src/assets/tnff_red.png",
+    //   },
+    // },
     {
       resolve: "gatsby-source-graphql",
       options: {
