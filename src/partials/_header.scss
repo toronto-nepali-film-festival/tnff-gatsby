@@ -3,8 +3,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
-  margin-top: 0;
 
   svg {
     color: $tnff-red;
@@ -19,7 +17,7 @@
 }
 
 .logo_container {
-  width: 100%;
+  width: 30%;
 
   a {
     color: $tnff-red;
