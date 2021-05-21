@@ -5,6 +5,8 @@
 
   p {
     display: flex;
+    // flex-wrap: wrap;
+    // margin-left: 0;
     align-items: center;
   }
   svg {
@@ -51,9 +53,17 @@
     display: flex;
     flex-direction: row;
 
-    & > * {
-      width: calc((100% / 2));
+    .director_data {
+      width: calc(75%);
     }
+
+    .director_img {
+      margin: 1.5rem 0;
+      width: calc(25%);
+    }
+    // & > * {
+    //   width: calc((100% / 2));
+    // }
   }
 }
 
@@ -63,6 +73,7 @@
 
     p {
       margin-right: 4rem;
+      font-size: $base-font-size * 1.125;
     }
   }
 
