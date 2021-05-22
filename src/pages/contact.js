@@ -6,9 +6,9 @@ export default function Contact() {
   return (
     <Layout>
       <Header headerText="Contact Us" />
-      <h3>
-        <a href="mailto:tnffcanada@gmail.com">Email us</a>
-      </h3>
+      <h4>
+        Email us: <a href="mailto:tnffcanada@gmail.com">tnffcanada@gmail.com</a>
+      </h4>
     </Layout>
   );
 }

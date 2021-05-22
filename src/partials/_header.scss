@@ -6,6 +6,7 @@
 
   svg {
     color: $tnff-red;
+    font-size: 2rem;
   }
 }
 
@@ -17,7 +18,7 @@
 }
 
 .logo_container {
-  width: 30%;
+  width: 100%;
 
   a {
     color: $tnff-red;
@@ -103,8 +104,16 @@
   display: none;
 }
 
+.desktop_nav {
+  display: none;
+}
+
+.mobile_nav {
+  display: block;
+}
+
 /* Mobile */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .popout_menu {
     padding: 2rem 1rem;
   }
@@ -115,5 +124,13 @@
 
   .header {
     margin-top: 5rem;
+  }
+
+  .desktop_nav {
+    display: block;
+  }
+
+  .mobile_nav {
+    display: none;
   }
 }

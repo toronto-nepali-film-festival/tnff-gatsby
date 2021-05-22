@@ -12,6 +12,11 @@ body {
   line-height: $vertical-rhythm;
 }
 
+main {
+  margin-top: 3rem;
+  min-height: 60vh;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -44,9 +49,9 @@ hr {
 }
 
 .layout {
-  margin: 3rem auto 0 auto;
-  min-height: calc(100vh - 6rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  // margin: 3rem auto 0 auto;
+  // min-height: calc(100vh - 6rem);
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
 }

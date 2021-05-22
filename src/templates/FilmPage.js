@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/layout";
 import { BiWorld } from "react-icons/bi";
-import { BsCalendar, BsPersonFill } from "react-icons/bs";
+import { BsCalendar } from "react-icons/bs";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { FaLanguage } from "react-icons/fa";
 import { RiMovieLine } from "react-icons/ri";

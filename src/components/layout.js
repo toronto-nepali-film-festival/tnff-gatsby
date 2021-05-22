@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import TnffFullLogo from "../assets/tnff-full-logo.svg";
 import { Link } from "gatsby";
-import { BrowserView, MobileView } from "react-device-detect";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
 import {
@@ -14,6 +13,14 @@ const ListLink = props => (
   <li>
     <Link to={props.to}>{props.children}</Link>
   </li>
+);
+
+const Menu = () => (
+  <ul>
+    <ListLink to="/about">About</ListLink>
+    <ListLink to="/contact/">Contact</ListLink>
+    <ListLink to="/films">Archive</ListLink>
+  </ul>
 );
 
 export default function Layout({ children }) {
@@ -30,13 +37,6 @@ export default function Layout({ children }) {
     <div className="layout wrapper">
       <div className="header">
         <div className="logo_nav">
-          <MobileView>
-            <div className="menu_open">
-              <button className="no_appearance" onClick={handleOpenMenu}>
-                <GiHamburgerMenu />
-              </button>
-            </div>
-          </MobileView>
           <div className="logo_container">
             <Link to="/">
               <img
@@ -44,22 +44,20 @@ export default function Layout({ children }) {
                 alt="Toronto Nepali Film Festival Logo"
                 className="logo"
               />
-              {/* <BrowserView>
-                <h3>Toronto Nepali Film Festival</h3>
-              </BrowserView> */}
             </Link>
           </div>
 
           <header>
-            <BrowserView>
-              <ul>
-                <ListLink to="/about">About</ListLink>
-                <ListLink to="/contact/">Contact</ListLink>
-                <ListLink to="/films">Archive</ListLink>
-              </ul>
-            </BrowserView>
+            <div className="desktop_nav">
+              <Menu />
+            </div>
 
-            <MobileView>
+            <div className="mobile_nav">
+              <div className="menu_open">
+                <button className="no_appearance" onClick={handleOpenMenu}>
+                  <GiHamburgerMenu />
+                </button>
+              </div>
               <div
                 className={`popout_menu ${
                   isMenuPopoutOpen ? "open" : "closed"
@@ -70,13 +68,9 @@ export default function Layout({ children }) {
                     <ImCross />
                   </button>
                 </div>
-                <ul>
-                  <ListLink to="/about">About</ListLink>
-                  <ListLink to="/contact">Contact</ListLink>
-                  <ListLink to="/films">Archive</ListLink>
-                </ul>
+                <Menu />
               </div>
-            </MobileView>
+            </div>
           </header>
         </div>
       </div>
