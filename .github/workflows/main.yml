@@ -36,13 +36,15 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.16'
-      - run: npm install
+      - run: npm ci 
       - name: Run E2E tests
         uses: cypress-io/github-action@v2
         with:
           record: true
           start: npm run start
           wait-on: 'http://localhost:8000'
+          browser: chrome
+          headless: true
         env:
           HASURA_GRAPHQL_URL: ${{ secrets.HASURA_GRAPHQL_URL }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
