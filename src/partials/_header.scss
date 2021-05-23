@@ -1,5 +1,6 @@
 /*Desktop View*/
 .header {
+  margin-top: 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,11 +15,11 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .logo_container {
-  width: 100%;
+  width: 80%;
 
   a {
     color: $tnff-red;
@@ -114,6 +115,9 @@
 
 /* Mobile */
 @media (min-width: 768px) {
+  .logo_nav {
+    justify-content: space-between;
+  }
   .popout_menu {
     padding: 2rem 1rem;
   }

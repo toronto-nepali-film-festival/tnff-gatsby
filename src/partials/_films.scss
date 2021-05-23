@@ -63,11 +63,31 @@
       }
     }
   }
+
+  .dropdown_mobile {
+    display: block;
+  }
+
+  .filter_desktop {
+    display: none;
+  }
 }
 
 @media (min-width: 992px) {
   .movie_data {
     background-color: rgb(255, 255, 255, 0);
     opacity: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .filter_year {
+    .dropdown_mobile {
+      display: none;
+    }
+
+    .filter_desktop {
+      display: block;
+    }
   }
 }
