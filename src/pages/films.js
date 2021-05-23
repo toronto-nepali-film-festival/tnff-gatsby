@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { Link } from "gatsby";
+import Header from "../components/header";
 import Layout from "../components/layout";
 import { Loader } from "../components/helpers/Loader";
 
@@ -10,14 +11,16 @@ export default function Films() {
   const getData = useCallback(async function () {
     try {
       const data = await fetch(
-        "https://sonal-hasura.herokuapp.com/v1/graphql",
+        process.env.GATSBY_HASURA_GRAPHQL_URL,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body:
-            '{"query":"{\\n tnff_films (order_by: {tnff_year: desc}) {\\n                id\\n                title\\n                tnff_year\\n                location\\n                category\\n                release_date\\n                duration_mins\\n                language\\n                director\\n                producer\\n                synopsis\\n                director_bio\\n                film_img_url\\n                director_img_url\\n                other_info\\n            }\\n}"}',
+          body: JSON.stringify({
+            query: "{tnff_films (order_by: {tnff_year: desc}) {\nid\ntitle\ntnff_year\nlocation\ncategory\nrelease_date\nduration_mins\nlanguage\ndirector\nproducer\nsynopsis\ndirector_bio\nfilm_img_url\ndirector_img_url\nother_info\n}}"
+
+          })
         }
       );
       const json = await data.json();
@@ -87,6 +90,7 @@ export default function Films() {
     return (
       <Layout>
         <div className="filter_year">
+          <Header headerText="Past Films" />
           <p>Filter By Year:</p>
           <div className="dropdown_mobile">
             <div className="select">

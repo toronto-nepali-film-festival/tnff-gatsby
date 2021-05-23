@@ -12,7 +12,6 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-transformer-json",
-    /*
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -23,13 +22,9 @@ module.exports = {
         theme_color: "#003049",
         displays: "standalone",
         icon: "src/assets/tnff_red.png",
-        legacy: false,
-        include_favicon: false,
-        cache_busting_mode: 'none',
       },
     },
-    */
-    //"gatsby-plugin-offline",
+    "gatsby-plugin-offline",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
     {
@@ -37,7 +32,7 @@ module.exports = {
       options: {
         typeName: "HASURA",
         fieldName: "hasura",
-        url: process.env.HASURA_GRAPHQL_URL,
+        url: process.env.GATSBY_HASURA_GRAPHQL_URL,
       },
     },
   ],
