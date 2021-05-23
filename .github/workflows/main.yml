@@ -10,7 +10,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.16'
-      - run: npm install
+      - run: npm ci
       - name: Lint javscript code
         run: npm run lint
       - name: Save eslint report json
@@ -22,7 +22,7 @@ jobs:
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           report-json: ".reports/eslint-report.json"
-      - name: Uload ESLint report
+      - name: Upload ESLint report
         uses: actions/upload-artifact@v1
         with:
           name: eslint-report.json
