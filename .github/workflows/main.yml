@@ -41,8 +41,8 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           record: true
-          start: npm run start
-          wait-on: 'http://localhost:8000'
+          start: npm run serve 
+          wait-on: 'http://localhost:9000'
           browser: chrome
           headless: true
         env:
