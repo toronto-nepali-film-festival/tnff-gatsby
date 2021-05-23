@@ -1,7 +1,7 @@
 describe('Contact', () => {
     it('users should be able to view the "/contact" page', () => {
       cy
-        .visit('localhost:9000/contact')
+        .visit('/contact')
         .get('h1').contains('Contact')
         .get('h4').contains('Email us: tnffcanada@gmail.com')
     });
