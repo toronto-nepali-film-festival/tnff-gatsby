@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/layout";
 import { BiWorld } from "react-icons/bi";
-import { BsCalendar, BsPersonFill } from "react-icons/bs";
+import { BsCalendar } from "react-icons/bs";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { FaLanguage } from "react-icons/fa";
 import { RiMovieLine } from "react-icons/ri";
@@ -84,16 +84,14 @@ const FilmPage = ({
       </div>
 
       <div className="film_section director">
-        {director_photo()}
-
         <div className={!director_img_url ? null : `director_data`}>
           <h3>Director</h3>
           <h4>
-            <BsPersonFill />
-            {director}
+            <em>{director}</em>
           </h4>
           <p>{director_bio}</p>
         </div>
+        {director_photo()}
       </div>
 
       {other}

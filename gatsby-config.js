@@ -9,12 +9,10 @@ module.exports = {
     author: "tnff",
   },
   plugins: [
-    "gatsby-plugin-offline",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sass",
+    "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-transformer-json",
-    "gatsby-plugin-mdx",
+    /*
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -25,8 +23,15 @@ module.exports = {
         theme_color: "#003049",
         displays: "standalone",
         icon: "src/assets/tnff_red.png",
+        legacy: false,
+        include_favicon: false,
+        cache_busting_mode: 'none',
       },
     },
+    */
+    //"gatsby-plugin-offline",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sass",
     {
       resolve: "gatsby-source-graphql",
       options: {

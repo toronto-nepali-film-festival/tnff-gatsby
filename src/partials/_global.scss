@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Quattrocento+Sans:wght@400;700&display=swap");
 
 html {
-  background-color: #00001a;
+  background-color: $tnff-blue;
 }
 
 body {
@@ -12,50 +12,25 @@ body {
   line-height: $vertical-rhythm;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: "Quattrocento Sans", sans-serif;
-}
-
-h1 {
-  font-size: $base-font-size * 5;
-  line-height: $base-line-height * ($base-font-size * 5);
-}
-
-h2 {
-  font-size: $base-font-size * 4;
-  line-height: $base-line-height * ($base-font-size * 3);
-}
-
-h3 {
-  font-size: $base-font-size * 3;
-  line-height: $base-line-height * ($base-font-size * 2);
-}
-
-h4 {
-  font-size: $base-font-size * 2;
-  line-height: $base-line-height * ($base-font-size * 1.5);
-}
-a {
-  text-decoration: none;
-  color: white;
+main {
+  margin-top: 3rem;
+  min-height: 60vh;
 }
 
 header {
-  margin-bottom: 1.5rem;
   display: flex;
   justify-content: space-between;
 
   h3 {
-    color: darkred;
+    color: $tnff-red;
   }
-}
 
-footer {
-  margin-bottom: 1.5rem;
-  color: grey;
+  a {
+    font-size: $base-font-size * 1.5;
+    &:hover {
+      color: $tnff-red;
+    }
+  }
 }
 
 li {
@@ -74,5 +49,9 @@ hr {
 }
 
 .layout {
-  margin: 3rem auto;
+  // margin: 3rem auto 0 auto;
+  // min-height: calc(100vh - 6rem);
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
 }
