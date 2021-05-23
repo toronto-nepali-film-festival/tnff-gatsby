@@ -2,7 +2,6 @@ import React, { useState, useCallback, useEffect } from "react";
 import { Link } from "gatsby";
 import Layout from "../components/layout";
 import { Loader } from "../components/helpers/Loader";
-import { BrowserView, MobileView } from "react-device-detect";
 
 export default function Films() {
   const [data, setData] = useState([]);
@@ -89,7 +88,7 @@ export default function Films() {
       <Layout>
         <div className="filter_year">
           <p>Filter By Year:</p>
-          <MobileView>
+          <div className="dropdown_mobile">
             <div className="select">
               <select name="tnff_films" id="year">
                 {years.map((el, index) => {
@@ -106,8 +105,9 @@ export default function Films() {
                 ;
               </select>
             </div>
-          </MobileView>
-          <BrowserView>
+          </div>
+
+          <div className="filter_desktop">
             <ul>
               <li onClick={e => handleClick(e)}>All</li>
               {years.map((el, index) => {
@@ -124,7 +124,7 @@ export default function Films() {
                 );
               })}
             </ul>
-          </BrowserView>
+          </div>
         </div>
         <div className="films_container">
           {filmData}
