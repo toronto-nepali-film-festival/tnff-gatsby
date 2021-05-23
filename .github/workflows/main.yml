@@ -27,25 +27,26 @@ jobs:
         with:
           name: eslint-report.json
           path: .reports/eslint-report.json
-  cypress-run:
-    runs-on: ubuntu-16.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Setup node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14.16'
-      - run: npm ci 
-      - run: npm run build
-      - name: Run E2E tests
-        uses: cypress-io/github-action@v2
-        with:
-          record: true
-          start: npm run serve 
-          wait-on: 'http://localhost:9000'
-          browser: chrome
-          headless: true
-        env:
-          HASURA_GRAPHQL_URL: ${{ secrets.HASURA_GRAPHQL_URL }}
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+
+#  cypress-run:
+#    runs-on: ubuntu-16.04
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v1
+#      - name: Setup node
+#        uses: actions/setup-node@v1
+#        with:
+#          node-version: '14.16'
+#      - run: npm ci 
+#      - run: npm run build
+#      - name: Run E2E tests
+#        uses: cypress-io/github-action@v2
+#        with:
+#          record: true
+#          start: npm run serve 
+#          wait-on: 'http://localhost:9000'
+#          browser: chrome
+#          headless: true
+#        env:
+#          HASURA_GRAPHQL_URL: ${{ secrets.HASURA_GRAPHQL_URL }}
+#          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
