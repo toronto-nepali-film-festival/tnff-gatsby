@@ -39,6 +39,10 @@ export default function Films() {
     setFilmFilter(e.target.textContent);
   };
 
+  const handleOnChange = filterYear => {
+    setFilmFilter(filterYear);
+  }
+
   let filmsRender = [];
   data.forEach(film => {
     if (filmFilter === "All") {
@@ -94,13 +98,12 @@ export default function Films() {
           <p>Filter By Year:</p>
           <div className="dropdown_mobile">
             <div className="select">
-              <select name="tnff_films" id="year">
+              <select name="tnff_films" id="year" onChange={e => handleOnChange(e.target.value)}>
                 {years.map((el, index) => {
                   return (
                     <option
                       value={el}
                       key={index}
-                      onClick={e => handleClick(e)}
                     >
                       {el}
                     </option>
