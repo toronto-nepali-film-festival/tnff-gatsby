@@ -1,39 +1,14 @@
-import React, { useState, useCallback, useEffect } from "react";
-import { Link } from "gatsby";
+import React, { useState } from "react";
+import { Link, graphql } from "gatsby";
 import Header from "../components/header";
 import Layout from "../components/layout";
-import { Loader } from "../components/helpers/Loader";
 
-export default function Films() {
-  const [data, setData] = useState([]);
+export default function Films({
+  data: {
+    hasura: { tnff_films },
+  },
+}) {
   const [filmFilter, setFilmFilter] = useState("All");
-
-  const getData = useCallback(async function () {
-    try {
-      const data = await fetch(
-        process.env.GATSBY_HASURA_GRAPHQL_URL,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            query: "{tnff_films (order_by: {tnff_year: desc}) {\nid\ntitle\ntnff_year\nlocation\ncategory\nrelease_date\nduration_mins\nlanguage\ndirector\nproducer\nsynopsis\ndirector_bio\nfilm_img_url\ndirector_img_url\nother_info\n}}"
-
-          })
-        }
-      );
-      const json = await data.json();
-      setData(json.data.tnff_films);
-    } catch (err) {
-      setData([]);
-      console.log(err);
-    }
-  }, []);
-
-  useEffect(() => {
-    getData();
-  }, [getData]);
 
   const handleClick = e => {
     setFilmFilter(e.target.textContent);
@@ -41,10 +16,10 @@ export default function Films() {
 
   const handleOnChange = filterYear => {
     setFilmFilter(filterYear);
-  }
+  };
 
   let filmsRender = [];
-  data.forEach(film => {
+  tnff_films.forEach(film => {
     if (filmFilter === "All") {
       filmsRender.push(film);
     } else {
@@ -82,62 +57,83 @@ export default function Films() {
   const emptyArray =
     filmsRender.length === 0 ? "Sorry, no films for this year." : null;
 
-  const yearsList = data.map(el => {
+  const yearsList = tnff_films.map(el => {
     return el.tnff_year;
   });
 
   const years = [...new Set(yearsList)];
 
-  if (data === []) {
-    return <Loader />;
-  } else {
-    return (
-      <Layout>
-        <div className="filter_year">
-          <Header headerText="Past Films" />
-          <p>Filter By Year:</p>
-          <div className="dropdown_mobile">
-            <div className="select">
-              <select name="tnff_films" id="year" onChange={e => handleOnChange(e.target.value)}>
-                {years.map((el, index) => {
-                  return (
-                    <option
-                      value={el}
-                      key={index}
-                    >
-                      {el}
-                    </option>
-                  );
-                })}
-                ;
-              </select>
-            </div>
-          </div>
-
-          <div className="filter_desktop">
-            <ul>
-              <li onClick={e => handleClick(e)}>All</li>
+  return (
+    <Layout>
+      <div className="filter_year">
+        <Header headerText="Past Films" />
+        <p>Filter By Year:</p>
+        <div className="dropdown_mobile">
+          <div className="select">
+            <select
+              name="tnff_films"
+              id="year"
+              onChange={e => handleOnChange(e.target.value)}
+            >
               {years.map((el, index) => {
                 return (
-                  <li key={index}>
-                    <Link
-                      to="/films"
-                      activeClassName="active"
-                      onClick={e => handleClick(e)}
-                    >
-                      {el}
-                    </Link>
-                  </li>
+                  <option value={el} key={index}>
+                    {el}
+                  </option>
                 );
               })}
-            </ul>
+              ;
+            </select>
           </div>
         </div>
-        <div className="films_container">
-          {filmData}
-          <h4>{emptyArray}</h4>
+
+        <div className="filter_desktop">
+          <ul>
+            <li onClick={e => handleClick(e)}>All</li>
+            {years.map((el, index) => {
+              return (
+                <li key={index}>
+                  <Link
+                    to="/films"
+                    activeClassName="active"
+                    onClick={e => handleClick(e)}
+                  >
+                    {el}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         </div>
-      </Layout>
-    );
-  }
+      </div>
+      <div className="films_container">
+        {filmData}
+        <h4>{emptyArray}</h4>
+      </div>
+    </Layout>
+  );
 }
+
+export const query = graphql`
+  query allFilmsQuery {
+    hasura {
+      tnff_films(order_by: { tnff_year: desc }) {
+        category
+        director
+        film_img_url
+        location
+        language
+        id
+        other_info
+        producer
+        release_date
+        synopsis
+        title
+        tnff_year
+        director_bio
+        director_img_url
+        duration_mins
+      }
+    }
+  }
+`;
