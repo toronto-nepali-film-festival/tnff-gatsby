@@ -55,7 +55,7 @@ export default function Films({
   });
 
   const emptyArray =
-    filmsRender.length === 0 ? "Sorry, no films for this year." : null;
+    filmsRender.length === 0 ? "Sorry we are still working on updating our catalogue for this year, check back again soon!" : null;
 
   const yearsList = tnff_films.map(el => {
     return el.tnff_year;
