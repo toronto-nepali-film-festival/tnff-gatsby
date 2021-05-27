@@ -18,7 +18,6 @@ const ListLink = props => (
 const Menu = () => (
   <ul>
     <ListLink to="/films">Archive</ListLink>
-    <ListLink to="/about">About</ListLink>
     <ListLink to="/contact/">Contact</ListLink>
   </ul>
 );
@@ -78,13 +77,25 @@ export default function Layout({ children }) {
       <footer>
         <p>© TNFF | Toronto Nepali Film Festival</p>
         <div className="socials">
-          <a href="https://www.instagram.com/tnffcanada/" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.instagram.com/tnffcanada/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <AiOutlineInstagram />
           </a>
-          <a href="https://twitter.com/tnffcanada" target="_blank" rel="noreferrer">
+          <a
+            href="https://twitter.com/tnffcanada"
+            target="_blank"
+            rel="noreferrer"
+          >
             <AiOutlineTwitter />
           </a>
-          <a href="https://www.facebook.com/TorontoNepaliFilmFestival" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.facebook.com/TorontoNepaliFilmFestival"
+            target="_blank"
+            rel="noreferrer"
+          >
             <AiOutlineFacebook />
           </a>
         </div>
