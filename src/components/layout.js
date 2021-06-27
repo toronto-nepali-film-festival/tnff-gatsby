@@ -19,6 +19,7 @@ const Menu = () => (
   <ul>
     <ListLink to="/films">Archive</ListLink>
     <ListLink to="/contact/">Contact</ListLink>
+    <ListLink to="/about">About Us</ListLink>
   </ul>
 );
 

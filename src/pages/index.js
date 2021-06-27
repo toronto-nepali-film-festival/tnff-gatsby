@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from "../components/layout";
-import Header from "../components/header";
 import ImageBanner from "../components/imagebanner";
 
 export default function Home() {
@@ -9,7 +8,6 @@ export default function Home() {
       <ImageBanner
         imageUrl="https://s3.amazonaws.com/tnff-static.tnff.ca/tnff-2015/sunkali/sunakali-4.jpg"
         imageText="View past films" />
-      <Header headerText="About TNFF" />
       <p>
         Toronto Nepali Film Festival (TNFF) is a not for profit organization
         based in Toronto, Ontario. Partnering with organizations in Canada,
