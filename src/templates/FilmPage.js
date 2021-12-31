@@ -26,10 +26,11 @@ const FilmPage = ({
 }) => {
   const other = () => {
     if (other_info) {
+      const other_info_text = other_info.split('\n').map(str => <p>{str}</p>);
       return (
         <div className="film_section">
           <h4>Other Info:</h4>
-          <p>{other_info}</p>
+          {other_info_text}
         </div>
       );
     } else {
@@ -94,7 +95,7 @@ const FilmPage = ({
         {director_photo()}
       </div>
 
-      {other}
+      {other()}
     </Layout>
   );
 };

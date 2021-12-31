@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <Layout>
       <ImageBanner
-        imageUrl="https://s3.amazonaws.com/tnff-static.tnff.ca/tnff-2015/sunkali/sunakali-4.jpg"
+        imageUrl="https://tnff-static.tnff.ca/tnff-2015/sunkali/sunakali-4.jpg"
         imageText="View past films" />
       <p>
         Toronto Nepali Film Festival (TNFF) is a not for profit organization
