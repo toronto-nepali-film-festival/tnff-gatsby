@@ -31,7 +31,7 @@
 .popout_menu {
   position: fixed;
   padding: 4rem 2rem;
-  background-color: $tnff-blue;
+  background-color: $tnff-background;
   position: fixed;
   top: 0;
   left: 0;
@@ -63,7 +63,7 @@
       margin: 1.5rem 0;
       a {
         text-transform: uppercase;
-        color: white;
+        color: black;
         font-size: 2rem;
         font-weight: 300;
         &:active,

@@ -2,6 +2,10 @@
   "name": "tnff-gatsby",
   "version": "1.0.0",
   "description": "Website for Toronto Nepali Film Festival",
+  "engines": {
+    "node": ">=16.13.1",
+    "npm": ">=8.1.2"
+  },
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean",

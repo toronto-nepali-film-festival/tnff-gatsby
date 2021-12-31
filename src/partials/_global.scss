@@ -2,12 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Quattrocento+Sans:wght@400;700&display=swap");
 
 html {
-  background-color: $tnff-blue;
+  background-color: $tnff-background;
 }
 
 body {
   font-family: "Work Sans", sans-serif;
-  color: white;
+  color: black;
   font-size: $base-font-size;
   line-height: $vertical-rhythm;
 }
