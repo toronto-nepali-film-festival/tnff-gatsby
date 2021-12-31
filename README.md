@@ -29,7 +29,7 @@ npm run build
 npm run serve
 
 # in a seperate terminal window
-npm run cy:ru~n
+npm run cy:run
 ```
 
 ### Continous Deployment
