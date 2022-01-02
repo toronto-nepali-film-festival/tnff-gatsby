@@ -7,7 +7,8 @@ export default function Home() {
     <Layout>
       <ImageBanner
         imageUrl="https://tnff-static.tnff.ca/tnff-2015/sunkali/sunakali-4.jpg"
-        imageText="View past films" />
+        imageText="View past films"
+      />
       <p>
         Toronto Nepali Film Festival (TNFF) is a not for profit organization
         based in Toronto, Ontario. Partnering with organizations in Canada,

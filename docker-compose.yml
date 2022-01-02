@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  postgres:
+    env_file: docker/.env
+    container_name: tnff-db
+    build:
+      context: services/postgres
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - 5432:5432
+  hasura:
+    depends_on:
+      - "postgres"
+    env_file: docker/.env
+    container_name: tnff-hasura
+    build:
+      context: services/hasura
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8080:8080
+  nginx:
+    env_file: docker/.env
+    container_name: tnff-nginx
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 80:80

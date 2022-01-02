@@ -1,5 +1,5 @@
 {
-    "projectId": "s2d6rb",
-    "baseUrl": "http://localhost:9000",
-    "chromeWebSecurity": false
+  "projectId": "s2d6rb",
+  "baseUrl": "http://localhost:9000",
+  "chromeWebSecurity": false
 }
