@@ -26,7 +26,7 @@ const FilmPage = ({
 }) => {
   const other = () => {
     if (other_info) {
-      const other_info_text = other_info.split('\n').map(str => <p>{str}</p>);
+      const other_info_text = other_info.split("\n").map(str => <p>{str}</p>);
       return (
         <div className="film_section">
           <h4>Other Info:</h4>
