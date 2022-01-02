@@ -1,0 +1,1 @@
+COPY tnff_films FROM '/data/tnff_films.csv' DELIMITER ',' CSV HEADER;

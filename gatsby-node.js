@@ -3,9 +3,9 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
 
   const films = await graphql(
     `
-      query getFilm($film_title: String) {
+      query getFilm {
         hasura {
-          tnff_films(where: { title: { _eq: $film_title } }) {
+          tnff_films {
             title
             synopsis
             tnff_year
